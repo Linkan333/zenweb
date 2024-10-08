@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1 id="homePageWelcome">Welcome to Zen</h1>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <section>
+        <div class="aboutBox">
+            <p class="text-light w-50">At <span style="color: #ec650c; font-weight: 600;">Zen</span>, we provide a powerful and intuitive tool designed to help you navigate the world of crypto trading with confidence. Whether you're a seasoned trader or just starting out, our platform delivers exceptional results through advanced features like our <span style="text-decoration: underline;">wallet generator</span>, which securely creates and manages your crypto wallets, and <span style="text-decoration: underline;">market maker</span> tools to ensure you get the best possible trades. Plus, with <span style="text-decoration: underline;">fake trade activity</span>, you can monitor real-time trading movements and stay ahead of the market. Join Zen and experience the future of crypto trading today.</p>
+        </div>
+
+        <div id="arrowBox">
+            <i class="fa-solid fa-arrow-down"></i>
+        </div>
+    </section>
+
+<section>
+    <div class="container my-5">
+        <div class="row">
+          <!-- Wallet Generator Card -->
+          <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Wallet Generator</h5>
+                <p class="card-text">Securely create and manage crypto wallets with our easy-to-use tool, keeping your assets safe.</p>
+                <a href="{{ url_for('plans') }}" class="primary-btn">See Plans</a>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Market Maker Tools Card -->
+          <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Market Maker Tools</h5>
+                <p class="card-text">Leverage advanced market maker tools to ensure you get the best possible trades in real-time.</p>
+                <a href="{{ url_for('plans') }}" class="primary-btn">See Plans</a>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Fake Trade Activity Card -->
+          <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Fake Trade Activity</h5>
+                <p class="card-text">Monitor real-time trade activity and stay ahead of the market with our cutting-edge tools.</p>
+                <a href="{{ url_for('plans') }}" class="primary-btn">See Plans</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+{% endblock %}
