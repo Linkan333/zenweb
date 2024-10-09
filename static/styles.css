@@ -10,14 +10,12 @@ body {
 
 
 
-.card:hover {
-    transform: translateY(-5px);
-    transition: all 0.3s ease-in-out;
-}
 
 .card {
     background-color: transparent;
-    border: 2px solid #ff8c00;
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, #ff8c00, #ff0000) 1 100%;
     color: white;
 
 }
@@ -137,6 +135,21 @@ a.primary-btn:hover:after, a.primary-btn:focus:after {
     transform-origin: left; 
 }
 
+.primary-btn  {
+    padding: 12px 24px;
+    border: none;
+    background-color: transparent;
+    border-right: 2px solid #ec650c;
+    border-left: 2px solid #ec650c;
+    color: white;
+}
+
+.primary-btn:hover {
+    transition: all 0.5s ease-in-out;
+    background-color: #1e2142ab;
+}
+
+
 
 
 #arrowBox {
@@ -160,14 +173,14 @@ a.primary-btn:hover:after, a.primary-btn:focus:after {
 .form-control {
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #ec650c;
+    border-bottom: 2px solid #ec660c3c;
     border-radius: 0;
 }
 
 .form-control:focus {
-    background-color: #171a2e;
     border: none;
-    border-bottom: 2px solid #ec650c;
+    background-color: transparent;
+    border-bottom: 1px solid #ec650c;
     outline: none;
     box-shadow: none;
     color: white;
