@@ -10,9 +10,19 @@ def index():
 def plans():
     return render_template('plans.html')
 
+
+
 @app.route('/account')
 def account():
     return render_template('account.html')
+
+@app.route('/account/signup')
+def signup():
+    return render_template('signup.html')
+
+@app.route('/account/signin')
+def signin():
+    return render_template('signin.html')
 
 # Run the app
 if __name__ == '__main__':

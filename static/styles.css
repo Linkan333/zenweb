@@ -57,6 +57,12 @@ canvas {
     transition: all 0.3s ease-in-out;
 }
 
+.button-nav {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+
 a.button-link {
     font-size: 14px;
     letter-spacing: 2px;
@@ -132,6 +138,7 @@ a.primary-btn:hover:after, a.primary-btn:focus:after {
 }
 
 
+
 #arrowBox {
     position: relative;
     top: -150px;
@@ -148,6 +155,53 @@ a.primary-btn:hover:after, a.primary-btn:focus:after {
     animation: jump 0.6s ease-in-out infinite;
     z-index: 10;
 }
+
+
+.form-control {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ec650c;
+    border-radius: 0;
+}
+
+.form-control:focus {
+    background-color: #171a2e;
+    border: none;
+    border-bottom: 2px solid #ec650c;
+    outline: none;
+    box-shadow: none;
+    color: white;
+}
+
+
+.navbar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    border-right: 2px solid #ec650c;
+}
+
+.nav-link {
+    width: 300px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 0.4em 0.8em;
+    color: #ec650c;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+    z-index: 10;
+}
+
+.nav-link:hover {
+    transform: translateX(5px);
+    transition: 0.3s ease-in-out;
+    color: #333;
+}
+
 
 @keyframes jump {
     0%, 100% {

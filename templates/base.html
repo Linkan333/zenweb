@@ -11,17 +11,14 @@
 </head>
 <body>
     <div class="button-nav text-end">
-        <a href="{{ url_for('index') }}" class="button-link">Home</a>
-        <a href="{{ url_for('plans') }}" class="button-link">Plans</a>
-        <a href="{{ url_for('account')}}" class="button-link">Account</a>
+        <a href="{{ url_for('index') }}" class="button-link"><i class="fa-solid fa-house"></i></a>
+        <a href="{{ url_for('plans') }}" class="button-link"><i class="fa-solid fa-file-invoice"></i></a>
+        <a href="{{ url_for('signup')}}" class="button-link"><i class="fa-solid fa-user"></i></a>
     </div>
 
     <div class="container mt-5">
         {% block content %}{% endblock %}
     </div>
 
-    <footer class="text-center mt-5">
-        <p>&copy; 2024 Zen</p>
-    </footer>
 </body>
 </html>
