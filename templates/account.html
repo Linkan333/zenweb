@@ -22,7 +22,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a onclick="billingFunction()" class="nav-link text-white mb-3">
+                <a onclick="showBilling()" class="nav-link text-white mb-3">
                     <i class="fa-solid fa-file-invoice"></i> Billing
                 </a>
             </li>
@@ -34,114 +34,160 @@
             <li class="nav-item">
                 <a onclick="showTicket()" class="nav-link text-white mt-3">
                     <i class="fa-solid fa-ticket"></i> Ticket
+                </a>
             </li>
         </ul>
     </nav>
-    <div class="card connectWithUs" id="ticketContents" style="display: none;">
+
+    <!-- Ticket Contents -->
+    <div class="card connectWithUs" id="ticketContents" style="display: none; margin-left: 320px;">
         <div class="card-header">
             Connect With Us
         </div>
-        <div class="card-body">
-    <h5 class="card-title">Contact us with submitting a ticket.</h5>
-    <a href="#" id="ticketbutton" onclick="ticketCreateFunction()" style="display: block; text-align: center; width: 200px;" class="primary-btn">Create Ticket</a>
-
-    <div class="form-container mt-4">
-        <div class="priorityLevel" id="priorityLevel" style="display: none; width: 300px;">
-            <p style="position: relative; left: 66px;"><small class="text-light">Priority</small></p>
-            <button type="button" class="btn btn-outline-info"><i class="fa-solid fa-circle-info"></i> Low</button>
-            <button type="button" class="btn btn-outline-warning"><i class="fa-solid fa-exclamation"></i> High</button>
-            <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-triangle-exclamation"></i> Critical</button>
-        </div>
-
-        <div class="ticketForm" id="ticketForm" style="display: none;">
-            <form id="ticketForm">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="subject" class="form-label">Subject</label>
-                    <input type="text" class="form-control" id="subject" placeholder="Ticket Subject" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" rows="4" placeholder="Describe your issue" required></textarea>
-                </div>
-
-                <a href="#" class="primary-btn" id="submitTicket">Submit Ticket</a>
-            </form>
-        </div>
-    </div>
-    <div class="card billing-card mb-4" id="billing-card" style="display: block; width: 100%; max-width: 600px;">
-        <div class="card-header">
-            Billing Information
-        </div>
 
         <div class="card-body">
-            <h5 class="card-title">Invoice Summary</h5>
+            <h5 class="card-title">Contact us by submitting a ticket.</h5>
+            <a href="#" id="ticketbutton" onclick="ticketCreateFunction()" style="display: block; text-align: center; width: 200px;" class="primary-btn">Create Ticket</a>
 
+            <div class="form-container mt-4">
+                <div class="priorityLevel" id="priorityLevel" style="display: none; width: 300px;">
+                    <p style="position: relative; left: 66px;"><small class="text-light">Priority</small></p>
+                    <button type="button" class="btn btn-outline-info"><i class="fa-solid fa-circle-info"></i> Low</button>
+                    <button type="button" class="btn btn-outline-warning"><i class="fa-solid fa-exclamation"></i> High</button>
+                    <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-triangle-exclamation"></i> Critical</button>
+                </div>
+
+                <div class="ticketForm" id="ticketForm" style="display: none;">
+                    <form id="ticketForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Ticket Subject" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Describe your issue" required></textarea>
+                        </div>
+
+                        <a href="#" class="primary-btn" id="submitTicket">Submit Ticket</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="history-section">
+            <h6 class="mb-3">Support History</h6>
             <ul class="list-group mb-3">
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Invoice Date:
-                    <span>October 10, 2024</span>
+                <li class="list-group-item historySupport d-flex justify-content-between align-items-center">
+                    Wallet Bug
+                    <span>Priority</span>
+                    <span style="color: #dc3545;"><i class="fa-solid fa-triangle-exclamation"></i> Critical</span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Invoice Number:
-                    <span>#INV-00123982</span>
+                <li class="list-group-item historySupport d-flex  justify-content-between align-items-center">
+                    Plan bug
+                    <span>Priority</span>
+                    <span style="color: #17a2b8"><i class="fa-solid fa-circle-info"></i> Low</span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Amount Due:
-                    <span>$380.00</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Due Date:
-                    <span>November 10, 2024</span>
+                <li class="list-group-item historySupport d-flex justify-content-between align-items-center">
+                    Account bug
+                    <span>Priority</span>
+                    <span style="color: #ffc107"><i class="fa-solid fa-exclamation"></i> High</span>
                 </li>
             </ul>
+        </div>
+    </div>
 
+    <!-- Billing Card (Moved outside of ticketContents) -->
+    <div class="card billing-card mb-4" id="billing-card" style="display: none; width: 800px; margin-left: 320px;">
+        <div class="card-header">
+            Diamond Miner Plan
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="card-title">August 2024 (Last Invoice)</h5>
+                <h3>$360.55</h3>
+            </div>
+            
+            <p style="width: 600px; word-wrap: break-word;">Your plan represents the highest level of access to your crypto bot, offering unparalleled insights, the fastest trading algorithms, and priority support. It's designed for those who want to "mine" the best opportunities with the most advanced tools at their disposal.</p>
+    
+            <!-- Usage Section -->
+            <div class="usage-section">
+                <h6 class="mb-3">Usage</h6>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Requests Made
+                        <span>375 adv.</span>
+                        <span>$80.00</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Wallets Generated
+                        <span>12 adv.</span>
+                        <span>$25.00</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Volume Made
+                        <span>43 adv.</span>
+                        <span>$255.55</span>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="total-section d-flex justify-content-between align-items-center mb-4">
+                <span><strong>Total:</strong></span>
+                <span>$360.55</span>
+            </div>
+    
+            <!-- Seats and Services -->
+            <div class="d-flex justify-content-between mb-4">
+                <div class="seats-section">
+                    <h6>Wallets Used</h6>
+                    <span>9/12</span>
+                    <!-- Add seat icons here -->
+                </div>
+                <div class="services-section">
+                    <h6>Requests Validated</h6>
+                    <span>10/10</span>
+                    <!-- Add service icons here -->
+                </div>
+            </div>
+    
+            <!-- Buttons -->
             <div class="d-flex justify-content-end">
-                <a href="#" class="primary-btn me-2">Renew Plan</a>
-                <a href="#" class="primary-btn">Download Invoice</a>
+                <a href="#" class="primary-btn me-2" id="renewPlanBtn">Renew Plan</a>
+                <a href="#" class="primary-btn" id="downloadInvoiceBtn">Download Invoice</a>
             </div>
         </div>
     </div>
-</div>
 
+<!-- JavaScript -->
 <script>
     function showTicket() {
         document.getElementById("ticketContents").style.display = 'block';
         document.getElementById("billing-card").style.display = 'none';
+    }
 
+    function showBilling() {
+        document.getElementById("billing-card").style.display = 'block';
+        document.getElementById("ticketContents").style.display = 'none';
     }
 
     function ticketCreateFunction() {
         document.getElementById("ticketForm").style.display = 'block';
         document.getElementById("ticketbutton").style.display = 'none';
         document.getElementById("priorityLevel").style.display = 'block';
-        document.getElementById("billing-card").style.display = 'none';
-
     }
 
-    function billingFunction() {
-        document.getElementById("ticketContents").style.display = 'none';
-        document.getElementById("ticketForm").style.display = 'none';
-        document.getElementById("ticketbutton").style.display = 'none';
-        document.getElementById("priorityLevel").style.display = 'none';
-
-
-        document.getElementById("billing-card").style.display = 'block';
-    }
-
-    const priorityButtons  = document.querySelectorAll('.priorityLevel button');
+    const priorityButtons = document.querySelectorAll('.priorityLevel button');
 
     priorityButtons.forEach(button => {
         button.addEventListener('click', function() {
             priorityButtons.forEach(btn => btn.classList.remove('active'));
-
             this.classList.add('active');
-        })
-    })
+        });
+    });
 </script>
 {% endblock %}
