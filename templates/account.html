@@ -12,7 +12,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-white mb-3">
+                <a onclick="showDashboard()" class="nav-link text-white mb-3">
                     <i class="fa-solid fa-table-columns"></i> Dashboard
                 </a>
             </li>
@@ -22,7 +22,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a onclick="showBilling()" class="nav-link text-white mb-3">
+                <a onclick="showBilling()" class="nav-link text-white mb-3" style="cursor: pointer;">
                     <i class="fa-solid fa-file-invoice"></i> Billing
                 </a>
             </li>
@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a onclick="showTicket()" class="nav-link text-white mt-3">
+                <a onclick="showTicket()" class="nav-link text-white mt-3" style="cursor: pointer;">
                     <i class="fa-solid fa-ticket"></i> Ticket
                 </a>
             </li>
@@ -101,64 +101,154 @@
         </div>
     </div>
 
-    <!-- Billing Card (Moved outside of ticketContents) -->
-    <div class="card billing-card mb-4" id="billing-card" style="display: none; width: 800px; margin-left: 320px;">
-        <div class="card-header">
-            Diamond Miner Plan
+    <!-- For the Dashboard -->
+    <div class="container mt-5" id="dashboardContainer" style="display: none;">
+        <!-- Chart Section -->
+        <div class="revenue-card mb-5">
+            <!-- Revenue Header -->
+            <div class="revenue-header d-flex justify-content-between">
+                <div>
+                    <h5 id="headerPreviousWeek">Previous Week</h5>
+                    <h2 id="previousWeekStats">$69,524 <span style="color: #ec650c;">●</span></h2>
+                </div>
+                <div>
+                    <h5 id="headerCurrentWeek">Current Week</h5>
+                    <h2 id="currentWeekStats">$58,254 <span style="color: blue;">●</span></h2>
+                </div>
+            </div>
+    
+            <!-- Earnings Section -->
+            <div>
+                <p class="stats-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ultricies nisl euismod magna.</p>
+            </div>
+    
+            <!-- Chart -->
+            <div class="chart-container">
+                <canvas id="revenueChart"></canvas>
+            </div>
         </div>
-        <div class="card-body">
+    
+        <!-- Stats Cards Section -->
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="stat-card">
+                    <div class="icon">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h2>5,543</h2>
+                    <p>Trade Stats</p>
+                    <p>Since last week <span class="text-red">1.08% <i class="fa fa-arrow-down"></i></span></p>
+                </div>
+            </div>
+    
+            <div class="col-md-6 col-lg-3">
+                <div class="stat-card">
+                    <div class="icon">
+                        <i class="fa-solid fa-code-pull-request"></i>
+                    </div>
+                    <h2>20</h2>
+                    <p>Volume Bot Requests</p>
+                    <p>Since last week <span class="text-green">5.27% <i class="fa fa-arrow-up"></i></span></p>
+                </div>
+            </div>
+    
+            <div class="col-md-6 col-lg-3">
+                <div class="stat-card">
+                    <div class="icon">
+                        <i class="fa fa-chart-line"></i>
+                    </div>
+                    <h2>+30.56%</h2>
+                    <p>Growth</p>
+                    <p>Since last week <span class="text-green">4.87% <i class="fa fa-arrow-up"></i></span></p>
+                </div>
+            </div>
+    
+            <div class="col-md-6 col-lg-3">
+                <div class="stat-card">
+                    <div class="icon">
+                        <i class="fa fa-dollar-sign"></i>
+                    </div>
+                    <h2>8 SOL</h2>
+                    <p>Revenue</p>
+                    <p>Since last week <span class="text-red">7.00% <i class="fa fa-arrow-down"></i></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Billing Card (Moved outside of ticketContents) -->
+    <div class="card billing-card mb-4" id="billing-card" style="display: none; width: 900px; margin-left: 320px;">
+        <div class="card-header">
+            Billing
+        </div>
+        <dv class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h5 class="card-title">August 2024 (Last Invoice)</h5>
-                <h3>$360.55</h3>
+                <h5 class="card-title" style="margin-left: 15px;">Choose a plan below</h5>
             </div>
-            
-            <p style="width: 600px; word-wrap: break-word;">Your plan represents the highest level of access to your crypto bot, offering unparalleled insights, the fastest trading algorithms, and priority support. It's designed for those who want to "mine" the best opportunities with the most advanced tools at their disposal.</p>
-    
-            <!-- Usage Section -->
-            <div class="usage-section">
-                <h6 class="mb-3">Usage</h6>
-                <ul class="list-group mb-3">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Requests Made
-                        <span>375 adv.</span>
-                        <span>$80.00</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Wallets Generated
-                        <span>12 adv.</span>
-                        <span>$25.00</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Volume Made
-                        <span>43 adv.</span>
-                        <span>$255.55</span>
-                    </li>
-                </ul>
-            </div>
-    
-            <div class="total-section d-flex justify-content-between align-items-center mb-4">
-                <span><strong>Total:</strong></span>
-                <span>$360.55</span>
-            </div>
-    
-            <!-- Seats and Services -->
-            <div class="d-flex justify-content-between mb-4">
-                <div class="seats-section">
-                    <h6>Wallets Used</h6>
-                    <span>9/12</span>
-                    <!-- Add seat icons here -->
+
+            <div class="plan-section">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card plan-card">
+                            <div class="card-header text-center">
+                                <h6>ZenBas Plan</h6>
+                                <p class="price">5 SOL / <small>month</small></p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">15 Volume Bot Requests per month</li>
+                                    <li class="list-group-item">5 Wallets Generated</li>
+                                    <li class="list-group-item">Basic Support</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a class="primary-btn" id="renewPlanBtn">Select Plan</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card plan-card">
+                            <div class="card-header text-center">
+                                <h6>ZenSta Plan</h6>
+                                <p class="price">8 SOL / <small>month</small></p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">25 Volume Bot Requests per month</li>
+                                    <li class="list-group-item">15 Wallets Generated</li>
+                                    <li class="list-group-item">Priority Support</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a class="primary-btn" id="renewPlanBtn">Select Plan</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card plan-card">
+                            <div class="card-header text-center">
+                                <h6>ZenPre Plan</h6>
+                                <p class="price">13 SOL / <small>month</small></p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">40 Volume Bot Requests per month</li>
+                                    <li class="list-group-item">20 Wallets Generated</li>
+                                    <li class="list-group-item">Priority Support</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a class="primary-btn" id="renewPlanBtn">Select Plan</a>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
-                <div class="services-section">
-                    <h6>Requests Validated</h6>
-                    <span>10/10</span>
-                    <!-- Add service icons here -->
-                </div>
             </div>
-    
-            <!-- Buttons -->
-            <div class="d-flex justify-content-end">
+
+            <div class="justify-content-end mt-4">
                 <a href="#" class="primary-btn me-2" id="renewPlanBtn">Renew Plan</a>
-                <a href="#" class="primary-btn" id="downloadInvoiceBtn">Download Invoice</a>
             </div>
         </div>
     </div>
@@ -168,11 +258,19 @@
     function showTicket() {
         document.getElementById("ticketContents").style.display = 'block';
         document.getElementById("billing-card").style.display = 'none';
+        document.getElementById("dashboardContainer").style.display = 'none';
     }
 
     function showBilling() {
         document.getElementById("billing-card").style.display = 'block';
         document.getElementById("ticketContents").style.display = 'none';
+        document.getElementById("dashboardContainer").style.display = 'none';
+    }
+
+    function showDashboard() {
+        document.getElementById("billing-card").style.display = 'none';
+        document.getElementById("ticketContents").style.display = 'none';
+        document.getElementById("dashboardContainer").style.display = 'block';
     }
 
     function ticketCreateFunction() {
@@ -181,13 +279,71 @@
         document.getElementById("priorityLevel").style.display = 'block';
     }
 
-    const priorityButtons = document.querySelectorAll('.priorityLevel button');
-
-    priorityButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            priorityButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-        });
+    // Initialize the Chart.js chart after the page loads
+    window.onload = function() {
+    var ctx = document.getElementById('revenueChart').getContext('2d');
+    var revenueChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                data: [20000, 25000, 22000, 27000, 29000, 30000, 25000],
+                borderColor: '#ec650c',
+                fill: false,
+                lineTension: 0.4,
+                borderWidth: 3,
+                pointRadius: 0
+            }, {
+                data: [18000, 23000, 20000, 24000, 25000, 27000, 22000],
+                borderColor: 'blue',
+                fill: false,
+                lineTension: 0.4,
+                borderWidth: 3,
+                pointRadius: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false  // Hide the legend
+                },
+                tooltip: {
+                    enabled: true,  // Enable tooltips
+                    mode: 'index',  // Show tooltips for all datasets at once
+                    intersect: false,  // Ensure tooltips are shown when hovering near the lines, not just directly on points
+                    callbacks: {
+                        label: function(context) {
+                            // Customize the tooltip label format
+                            let label = context.dataset.borderColor === '#ec650c' ? 'Previous Week' : 'Current Week';
+                            return label + ': ' + context.formattedValue + ' USD';
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#0b0d2a9e'
+                    },
+                    ticks: {
+                        color: '#0b0d2a9e'
+                    }
+                },
+                x: {
+                    grid: {
+                        color: '#0b0d2a9e'
+                    },
+                    ticks: {
+                        color: '#fff'
+                    }
+                }
+            }
+        }
     });
+};
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 {% endblock %}

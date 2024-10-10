@@ -179,6 +179,13 @@ a.primary-btn:hover:after, a.primary-btn:focus:after {
     animation: jump 0.6s ease-in-out infinite;
 }
 
+.billing-card {
+    border: none;
+    box-shadow: -21px 22px 29px -3px rgba(0,0,0,0.62);
+-webkit-box-shadow: -21px 22px 29px -3px rgba(0,0,0,0.62);
+-moz-box-shadow: -21px 22px 29px -3px rgba(0,0,0,0.62);
+}
+
 
 .form-control {
     background-color: transparent;
@@ -252,6 +259,12 @@ a.primary-btn:hover:after, a.primary-btn:focus:after {
 }
 
 
+#submitTicket {
+    background-color: transparent;
+    border: none;
+}
+
+
 .card-title {
     text-transform: uppercase;
     font-size: 16px;
@@ -268,10 +281,12 @@ a.primary-btn:hover:after, a.primary-btn:focus:after {
 
 #renewPlanBtn {
     border: none;
+    cursor: pointer;
 }
 
 #renewPlanBtn:hover {
     background-color: transparent;
+    cursor: pointer;
 }
 
 .card-header {
@@ -295,6 +310,101 @@ a.primary-btn:hover:after, a.primary-btn:focus:after {
 
 .historySupport {
     border: 1px solid lightgrey;
+}
+
+.planSelectBtn:hover {
+    background-color: transparent;
+    border: none;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+}
+
+.revenue-card {
+    background-color: #0b0d2a9e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.revenue-header {
+    display: flex;
+    background-color: #1f244b34;
+    width: 790px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#headerCurrentWeek {
+    margin-right: 20px;
+    margin-top: 6px;
+    font-size: 14px;
+    color: lightgrey;
+}
+
+#currentWeekStats {
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+
+#previousWeekStats {
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+#headerPreviousWeek {
+    margin-left: 20px;
+    margin-top: 6px;
+    color: lightgrey;
+    font-size: 14px;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 869px;
+    margin-top: 20px;
+}
+.stats-text {
+    font-size: 14px;
+    width: 500px;
+}
+
+.stat-card {
+    background-color: #0b0d2a9e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.stat-card .icon {
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.stat-card h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+.stat-card p {
+    margin-bottom: 0;
+}
+.text-green {
+    color: #28a745;  
+}
+.text-red {
+    color: #dc3545; 
+}
+
+.row > .col-md-6 {
+    padding: 10px;
 }
 
 
