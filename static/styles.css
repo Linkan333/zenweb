@@ -26,16 +26,6 @@ body {
     transition: background 0.3s ease;
 }
 
-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    display: block;
-    background-color: #fff;
-    width: 100vw;
-    height: 100vh;
-}
 
 #homePageWelcome {
     color: #FFFF;
@@ -47,7 +37,6 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
 }
 
 #homePageWelcome:hover {
@@ -73,7 +62,6 @@ a.button-link {
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
-    z-index: 10;
 }
 
 a.button-link:after {
@@ -110,7 +98,6 @@ a.primary-btn {
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
-    z-index: 10;
 }
 
 a.primary-btn:after {
@@ -137,16 +124,16 @@ a.primary-btn:hover:after, a.primary-btn:focus:after {
 
 .primary-btn  {
     padding: 12px 24px;
-    border: none;
+    border-radius: 6px;
     background-color: transparent;
-    border-right: 2px solid #ec650c;
-    border-left: 2px solid #ec650c;
+    border: 2px solid #ec650c;
     color: white;
 }
 
 .primary-btn:hover {
     transition: all 0.5s ease-in-out;
     background-color: #1e2142ab;
+    border: 2px solid #ec660c00;
 }
 
 
@@ -166,7 +153,6 @@ a.primary-btn:hover:after, a.primary-btn:focus:after {
     border: 2px solid #ec650c;
     left: 800px;
     animation: jump 0.6s ease-in-out infinite;
-    z-index: 10;
 }
 
 
@@ -206,14 +192,10 @@ a.primary-btn:hover:after, a.primary-btn:focus:after {
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
-    z-index: 10;
+
 }
 
-.nav-link:hover {
-    transform: translateX(5px);
-    transition: 0.3s ease-in-out;
-    color: #333;
-}
+
 
 
 @keyframes jump {
