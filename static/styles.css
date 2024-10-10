@@ -44,6 +44,23 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+#ticketbutton {
+    border: none;
+    position: relative;
+    left: 15px;
+}
+
+#ticketbutton:hover {
+    background-color: transparent;
+}
+
+.connectWithUs {
+    border: none;
+    position: relative;
+    top: -40px;
+    left: -70px;
+}
+
 .button-nav {
     position: absolute;
     top: 5px;
@@ -136,6 +153,13 @@ a.primary-btn:hover:after, a.primary-btn:focus:after {
     border: 2px solid #ec660c00;
 }
 
+.paraGr {
+    font-family: Arial;
+    font-weight: 300;
+    letter-spacing: normal;
+}
+
+
 
 
 
@@ -195,6 +219,37 @@ a.primary-btn:hover:after, a.primary-btn:focus:after {
 
 }
 
+#message {
+    resize: none;
+    width: 600px;
+}
+
+.priorityLevel {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.priorityLevel button.btn-outline-info.active {
+    background-color: #17a2b8;
+    color: white; 
+    border-color: #17a2b8; 
+}
+
+
+.priorityLevel button.btn-outline-warning.active {
+    background-color: #ffc107; 
+    color: black; 
+    border-color: #ffc107; 
+}
+
+
+.priorityLevel button.btn-outline-danger.active {
+    background-color: #dc3545; 
+    color: white; 
+    border-color: #dc3545; 
+}
 
 
 

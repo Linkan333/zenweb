@@ -4,10 +4,24 @@ from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import check_password_hash
 from forms import SignUpForm, SignInForm
 from models import User
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib
+import numpy as np
+from scipy.interpolate import make_interp_spline
+import io
+import base64
 from __init__ import create_app, db  # Import the factory function
 
 app = create_app()  # Use create_app to initialize the app
 migrate = Migrate(app, db)  # Set up migrations
+matplotlib.use('Agg')
+
+# Random data just for visiualization
+data = {
+    'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    'Trades': [50, 100, 300, 900, 200, 30, 400, 383, 3881, 932, 492, 483]  # Keep all values
+}
 
 @app.route('/')
 def index():
@@ -54,6 +68,8 @@ def logout():
     logout_user()
     flash('You have been logged out', 'success')
     return redirect(url_for('index'))
+
+df = pd.DataFrame(data)
 
 @app.route('/account')
 @login_required
